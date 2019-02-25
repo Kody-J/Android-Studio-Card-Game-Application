@@ -1,3 +1,10 @@
 <resources>
-    <string name="app_name">HOT HANDS</string>
+    <string name="app_name">Hot Hands</string>
+    <string name="coming_soon">This Feature is Coming Soon!!!</string>
+    <string name="poker">"5 Card Poker"</string>
+    <string name="exit">"X"</string>
+    <string name="texasH">"Texas Holdem"</string>
+    <string name="game3">"Game Three"</string>
+    <string name="game4">"Game Four"</string>
+    <string name="play">"PLAY</string>
 </resources>
