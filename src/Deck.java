@@ -1,46 +1,76 @@
 package com.lab1.hothands;
 
-import java.util.Collections;
-import java.util.Vector;
-
 public class Deck extends Card {
 
     //Deck consists of 52 cards
-    private Vector deck = new Vector (52);
+    private Card deck[];
+
 
     //Creates a ordered deck
     public Deck(){
-        for(Integer i = 0; i < 4; i++){
-            for(Integer j = 0; j < 13; j++){
-                Card tempCard = new Card(i, j);
-                deck.add(tempCard);
+        int numOcards = 0;
+        deck = new Card[52];
+        char suite = ' ';
+        for(int i = 0; i < 4; i++){
+            switch (i){
+                case 0: {
+                    suite = 'c';
+                    break;
+                }
+                case 1: {
+                    suite = 'd';
+                    break;
+                }
+                case 2: {
+                    suite = 'h';
+                    break;
+                }
+                case 3: {
+                    suite = 's';
+                    break;
+                }
+            }
+            for(int j = 2; j < 15; j++){
+                Card tempCard = new Card(j, suite);
+                deck[numOcards] = tempCard;
+                numOcards += 1;
+
             }
         }
     }
 
-
-    public void swap(int a, int b){
-        Collections.swap(deck, a, b);
-    }
-
     // Returns a deck
-    public Vector getDeck(){
+    public Card[] getDeck() {
         return deck;
     }
 
-    // Prints the deck
-    //TO DO: Make print card image to screen
-    public void printdeck(){
-        for(int i = 0; i < 52; i++){
-            Card temp = new Card();
-            temp = (Card) deck.get(i);
-            temp.print();
-            System.out.println();
-        }
-    }
     // Returns the size of the deck
-    public int getSize() {
-        return deck.size();
+    public int getNumOcards() {
+        return deck.length;
     }
 
+    public void removeCard(){
+        Card tempDeck[] = new Card[deck.length-1];
+        for(int i = 0; i < (deck.length - 1); i++){
+            tempDeck[i] = deck[i];
+        }
+        deck = tempDeck;
+    }
+
+    public Card getCard(){
+        if(deck.length > 0) {
+            Card tempDeck [] = new Card[deck.length - 1];
+            for(int i = 0; i < deck.length - 1; i++){
+                tempDeck[i] = deck[i];
+            }
+            Card tempCard = deck[deck.length -1];
+            deck = tempDeck;
+            return tempCard;
+        }
+        else{
+            Card nullCard = new Card();
+            return nullCard;
+        }
+
+    }
 }
