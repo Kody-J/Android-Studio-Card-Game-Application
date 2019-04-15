@@ -25,27 +25,171 @@
 
     <LinearLayout
         android:id="@+id/pot_total"
-        android:layout_width="105dp"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
-        android:layout_alignParentEnd="true"
         android:layout_marginStart="6dp"
         android:layout_marginTop="39dp"
-        android:layout_marginEnd="154dp"
         android:gravity="center">
 
         <ImageView
-            android:layout_width="60dp"
-            android:layout_height="55dp"
+            android:id="@id/pot_total"
+            android:layout_width="50dp"
+            android:layout_height="45dp"
             android:src="@drawable/treasure" />
 
         <TextView
+            android:id="@+id/holdem_pot"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="$ 100,000"
             android:textColor="@color/white"
-            android:textSize="30sp" />
+            android:textSize="25sp"
+            android:textStyle="bold" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/holdemPlayer2"
+        android:layout_width="100sp"
+        android:layout_height="95sp"
+        android:layout_above="@+id/holdemPlyr2Hand"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="56dp"
+        android:layout_marginBottom="3dp"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="40sp"
+            android:src="@drawable/playericon" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="PLAYER 2"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/holdem_player2_chips"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:textColor="@color/white"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+
+    </LinearLayout>
+
+    <ImageView
+        android:layout_width="30sp"
+        android:layout_height="30sp"
+        android:src="@drawable/poker_chpz"
+        android:layout_above="@+id/holdemPlyr2Hand"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="30dp"
+        android:layout_marginBottom="5dp" />
+
+    <LinearLayout
+        android:id="@+id/holdemPlyr2Hand"
+        android:layout_width="75dp"
+        android:layout_height="50sp"
+        android:layout_above="@+id/holdemTableLayout"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="70dp"
+        android:layout_marginBottom="5dp"
+        android:gravity="bottom"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:id="@+id/ply2crd1"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:padding="1sp"
+            android:src="@drawable/saints_back_black"/>
+
+        <ImageView
+            android:id="@+id/ply2crd2"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:padding="1sp"
+            android:src="@drawable/saints_back_black"/>
+
+    </LinearLayout>
+
+    <ImageView
+        android:id="@+id/plyr3chipz"
+        android:layout_width="30sp"
+        android:layout_height="30sp"
+        android:src="@drawable/poker_chpz"
+        android:layout_above="@+id/holdemPlyr2Hand"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="254dp"
+        android:layout_marginBottom="5dp" />
+
+    <LinearLayout
+        android:id="@+id/holdemPlayer3"
+        android:layout_width="100sp"
+        android:layout_height="95sp"
+        android:layout_above="@+id/holdemPlyr3Hand"
+        android:layout_alignParentEnd="true"
+        android:layout_marginEnd="40dp"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="40sp"
+            android:src="@drawable/playericon" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="PLAYER 3"
+            android:textStyle="bold"/>
+        <TextView
+            android:id="@+id/holdem_plyr3_chips"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:gravity="center"
+            android:textColor="@color/white"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/holdemPlyr3Hand"
+        android:layout_width="75dp"
+        android:layout_height="50dp"
+        android:layout_above="@+id/holdemTableLayout"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="21dp"
+        android:layout_marginEnd="54dp"
+        android:layout_marginBottom="5dp"
+        android:gravity="bottom"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:id="@+id/ply3crd1"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:padding="1sp"
+            android:src="@drawable/saints_back_black"/>
+
+        <ImageView
+            android:id="@+id/ply3crd2"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:padding="1sp"
+            android:src="@drawable/saints_back_black"/>
 
     </LinearLayout>
 
@@ -54,66 +198,124 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
-        android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
         android:layout_marginStart="2dp"
-        android:layout_marginEnd="158dp"
         android:layout_marginBottom="24dp"
+        android:gravity="center"
         android:padding="4dp">
 
         <ImageView
             android:layout_width="75dp"
             android:layout_height="50dp"
             android:src="@drawable/poker_chpz"
-            android:textColor="@color/white"
-            android:textSize="30sp" />
+            android:textColor="@color/white" />
 
         <TextView
+            android:id="@+id/holdem_player1_chips"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="$ 50,000"
             android:textColor="@color/white"
-            android:textSize="30sp" />
+            android:textStyle="bold"
+            android:textSize="25sp" />
     </LinearLayout>
 
-
-    <ImageView
-        android:id="@+id/holdem_table"
-        android:layout_width="150dp"
-        android:layout_height="180dp"
+    <RelativeLayout
+        android:id="@+id/holdemTableLayout"
+        android:layout_width="360dp"
+        android:layout_height="170dp"
         android:layout_above="@+id/player_hand"
         android:layout_alignParentStart="true"
-        android:layout_alignParentEnd="true"
-        android:layout_marginStart="0dp"
+        android:layout_marginStart="30dp"
         android:layout_marginEnd="0dp"
-        android:layout_marginBottom="99dp"
-        android:padding="4dp"
-        android:src="@drawable/holdem_table_slim"/>
+        android:layout_marginBottom="10dp">
+
+        <ImageView
+            android:id="@+id/holdem_table"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:padding="2dp"
+            android:src="@drawable/holdem_table_slim2" />
+
+        <LinearLayout
+            android:id="@+id/dealer_hand"
+            android:layout_width="270dp"
+            android:layout_height="80dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginStart="45dp"
+            android:layout_marginBottom="52dp"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:id="@+id/dealer_1"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:padding="3dp"
+                android:scaleType="fitEnd" />
+
+            <ImageView
+                android:id="@+id/dealer_2"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:padding="3dp"
+                android:scaleType="fitEnd" />
+
+            <ImageView
+                android:id="@+id/dealer_3"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:padding="3dp"
+                android:scaleType="fitEnd" />
+
+            <ImageView
+                android:id="@+id/dealer_4"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:padding="3dp"
+                android:scaleType="fitEnd" />
+
+            <ImageView
+                android:id="@+id/dealer_5"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:padding="3dp"
+                android:scaleType="fitEnd" />
+
+        </LinearLayout>
+
+    </RelativeLayout>
 
     <LinearLayout
         android:id="@+id/player_hand"
-        android:layout_width="match_parent"
-        android:layout_height="160dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
-        android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginStart="0dp"
-        android:layout_marginEnd="0dp"
-        android:layout_marginBottom="101dp"
+        android:layout_marginStart="110dp"
+        android:layout_marginBottom="100dp"
         android:gravity="center"
         android:orientation="horizontal">
 
         <ImageView
             android:id="@+id/txsSecond_card"
-            android:layout_width="120dp"
-            android:layout_height="150dp"
-            android:onClick="flip2"/>
+            android:layout_width="95dp"
+            android:layout_height="120dp"
+            android:onClick="flip2"
+            android:src="@drawable/blackspace"/>
 
         <ImageView
             android:id="@+id/txsFirst_card"
-            android:layout_width="120dp"
-            android:layout_height="150dp"
-            android:onClick="flip1"/>
+            android:layout_width="95dp"
+            android:layout_height="120dp"
+            android:onClick="flip1"
+            android:src="@drawable/blackspace"/>
+
 
     </LinearLayout>
 
