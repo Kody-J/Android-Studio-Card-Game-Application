@@ -3,27 +3,24 @@ package com.lab1.hothands;
 import android.widget.ImageView;
 
 public class Card {
-    //TO DO: MAKE A DYNAMIC CARD IMAGE
-    // A card consists of a value and a suite
+    // A card consists of a value and a suite and an Id for a drawable image
     private int value;
     private char suite;
-    private String id;
+    private int id;
 
     public Card (){
         value = -1;
         suite = ' ';
-        id = "card";
+        int id;
     }
 
-    public Card(int dataVal, char dataSuite) {
+    public Card(int dataVal, char dataSuite, int dataId) {
         value = dataVal;
         suite = dataSuite;
-        id = "card";
+        id = dataId;
+    }
 
-    }
-    public char getSuit() {
-        return suite;
-    }
+    public char getSuit() { return suite; }
     public int getValue () { return value;}
-    public String getId () { return ( id + Integer.toString (value) + suite);}
+    public int getId () { return ( id);}
 }
