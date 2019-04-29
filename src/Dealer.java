@@ -4,75 +4,75 @@ tracks the rules, determines validity, and determines who wins
 */
 
 package com.lab1.hothands;
-
+import java.util.*;
 import java.util.Random;
 
-
-public class Dealer extends Deck {
+public class Dealer extends Deck{
     //Consists of a deck, card count, a name, an knowledge of the game rules, and player
-
-    Random rand;
+    private int chips_in_pot, plyr_1chips, plyr_2chips, plyr_3chips, player_count, card_count;
+    private Random rand;
     private Deck theD;
-    private String name;
-    private int handCount, cardCount, playerCount;
+    private ArrayList<Card> dealerCards;
+    private boolean isPoker;
 
 
-    public Dealer(char pokerOrHoldem) {
+    public Dealer(boolean is_poker_data, int player_data) {
 
         rand = new Random();
-        name = "DEALER";
         theD = new Deck ();
-        this.shuffle ();
-        cardCount = theD.getNumOcards ( );
-        playerCount = 2;
+        //Shuffle the deck at least 3 times
+        shuffle();
+        shuffle();
+        shuffle();
+        isPoker = is_poker_data;
+        card_count = theD.getNumOcards( );
+        player_count = player_data;
     }
 
     public  void shuffle(){
         Card tempCard;
         int randIndexToSwap1, randIndexToSwap2;
         for(int i = 0; i < 25; i++){
-            randIndexToSwap1 = rand.nextInt(27);
-            tempCard = theD.getDeck ()[randIndexToSwap1];
-            randIndexToSwap2 = rand.nextInt(27)+ 25;
-            theD.getDeck ()[randIndexToSwap1] = theD.getDeck ()[randIndexToSwap2];
-            theD.getDeck ()[randIndexToSwap2] = tempCard;
+            randIndexToSwap1 = rand.nextInt(26);
+            randIndexToSwap2 = rand.nextInt(26)+ 26;
+            Collections.swap(theD.getDeck (), randIndexToSwap1,randIndexToSwap2);
         }
     }
-
-    public Card drawCard(){
-        cardCount --;
-        return theD.getCard ();
+    public Card dealCard(){
+        Card tempCard = theD.getDeck().get (theD.getDeck ().size()-1);
+        theD.getDeck ().remove (theD.getDeck ().size ()-1);
+        theD.getDeck ().trimToSize ();
+        return tempCard;
     }
 
     public void burnCard(){
-        cardCount --;
-        theD.removeCard ();
+        theD.getDeck ().remove(theD.getDeck ().size() -1);
+        theD.getDeck ().trimToSize ();
     }
 
     //This is for Texas Hold'em: Burns a card, then dealer takes three card to turn over for the players
-    //TO DO: Print/ Display Card graphics
-    public Card[] flop() {
-        Card cardsToFlop [] = new Card[3];
+    public ArrayList<Card> flop() {
         burnCard();
         for (int i = 0; i < 3; i++) {
-            cardsToFlop[i] = theD.getCard ();
-            cardCount--;
+            dealerCards.add(dealCard ());
+            card_count--;
         }
-        return cardsToFlop;
+        return dealerCards;
     }
 
     //This is for Texas Hold'em: Burns a card, then dealer takes one card to turn over for players
-    public Card turn() {
+    public ArrayList<Card> turn() {
        burnCard ();
-       cardCount -= 2;
-       return drawCard ();
+       card_count -= 2;
+       dealerCards.add (dealCard ());
+       return dealerCards;
     }
 
     //This is for Texas Holdem: Burns a card, then dealer takes one card to turn over for players
-    public Card river() {
+    public ArrayList<Card> river() {
         burnCard ();
-        cardCount -= 2;
-        return drawCard ();
+        dealerCards.add (dealCard ());
+        return dealerCards;
     }
 
     //This is the begenning of the 5 card Poker logic: pretty simple implemintaion as such
@@ -81,28 +81,5 @@ public class Dealer extends Deck {
     //3. Draw (This where each player is given the opportunity to 'discard' any or all thier cards and recive new replacments
     //4. Betting round #2, begenning with the first active player
     //5. Showdown (a winner is determined if th there is more than one player in the pot)
-    public void poker_first(Player p) {
-        int[] index_to_remove = new int[-5];
-        //TO DO: create a text pop up window to display intermediate instructions to the screen
-        //accept use input to identify card form user hand to discard and put them in index_to_remove
-        for (int i = 0; i < 5; i++) {
-            if (p.getHand ( ) == null || index_to_remove[i] < 0 || index_to_remove[i] >= p.getHand ( ).length) {
-                // Create another array of size one less
-                Card[] anotherArray = new Card[p.getHand ( ).length - 1];
 
-                // Copy the elements except the index from original array to the other array
-                for (int k = 0; k < p.getHand ( ).length; k++) {
-
-                    // if the index is the removal element index
-                    if (i == index_to_remove[i]) {
-                        continue;
-                    }
-
-                    // if the index is not the removal element index
-                    anotherArray[k++] = p.getHand ( )[i];
-                }
-
-            }
-        }
-    }
 }
