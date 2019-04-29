@@ -17,7 +17,7 @@
         android:layout_marginEnd="11dp"
         android:layout_marginBottom="8dp"
         android:contextClickable="true"
-        android:onClick="playButton"
+        android:onClick="pokerSetUp"
         android:src="@drawable/back_icon2"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.973"
@@ -61,7 +61,7 @@
 
         <ImageView
             android:layout_width="match_parent"
-            android:layout_height="40sp"
+            android:layout_height="30sp"
             android:src="@drawable/playericon" />
 
         <TextView
@@ -100,7 +100,7 @@
         android:layout_alignParentStart="true"
         android:layout_marginStart="23dp"
         android:layout_marginEnd="23dp"
-        android:layout_marginBottom="40dp"
+        android:layout_marginBottom="30dp"
         android:gravity="bottom"
         android:orientation="horizontal">
 
@@ -168,7 +168,7 @@
 
         <ImageView
             android:layout_width="match_parent"
-            android:layout_height="40sp"
+            android:layout_height="30sp"
             android:src="@drawable/playericon" />
 
         <TextView
@@ -197,7 +197,7 @@
         android:layout_alignParentEnd="true"
         android:layout_marginStart="21dp"
         android:layout_marginEnd="23dp"
-        android:layout_marginBottom="40dp"
+        android:layout_marginBottom="30dp"
         android:gravity="bottom"
         android:orientation="horizontal">
 
@@ -248,13 +248,14 @@
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginStart="17dp"
-        android:layout_marginBottom="24dp"
+        android:layout_marginStart="6dp"
+        android:layout_marginBottom="15dp"
+        android:gravity="center"
         android:padding="4dp">
 
         <ImageView
-            android:layout_width="60dp"
-            android:layout_height="35dp"
+            android:layout_width="45dp"
+            android:layout_height="45dp"
             android:src="@drawable/poker_chpz" />
 
         <TextView
@@ -269,81 +270,156 @@
 
     <ImageView
         android:id="@+id/poker_table"
-        android:layout_width="380dp"
+        android:layout_width="340dp"
         android:layout_height="170dp"
         android:layout_above="@+id/player_hand"
         android:layout_alignParentStart="true"
-        android:layout_marginStart="15dp"
-        android:layout_marginBottom="50dp"
+        android:layout_marginStart="32.5dp"
+        android:layout_marginBottom="20dp"
         android:src="@drawable/poker_table_e" />
 
     <LinearLayout
         android:id="@+id/player_hand"
-        android:layout_width="325dp"
+        android:layout_width="350dp"
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginStart="41dp"
-        android:layout_marginEnd="41dp"
-        android:layout_marginBottom="100dp"
+        android:layout_marginStart="27.5dp"
+        android:layout_marginEnd="29dp"
+        android:layout_marginBottom="140dp"
         android:gravity="bottom"
         android:orientation="horizontal">
 
         <ImageView
             android:id="@+id/first_card"
             android:layout_width="0dp"
-            android:layout_height="90dp"
+            android:layout_height="95dp"
             android:layout_weight="1"
-            android:onClick="flipCard1"
             android:scaleType="fitEnd"
             android:src="@drawable/blackspace"/>
 
         <ImageView
             android:id="@+id/second_card"
             android:layout_width="0dp"
-            android:layout_height="90dp"
+            android:layout_height="95dp"
             android:layout_weight="1"
-            android:onClick="flipCard2"
-            android:scaleType="fitEnd"
-            android:src="@drawable/blackspace"/>
-
-        <ImageView
-            android:id="@+id/third_card"
-            android:layout_width="0dp"
-            android:layout_height="90dp"
-            android:layout_weight="1"
-            android:onClick="flipCard3"
             android:scaleType="fitEnd"
             android:src="@drawable/blackspace"/>
 
         <ImageView
             android:id="@+id/fourth_card"
             android:layout_width="0dp"
-            android:layout_height="90dp"
+            android:layout_height="95dp"
             android:layout_weight="1"
-            android:onClick="flipCard4"
+            android:scaleType="fitEnd"
+            android:src="@drawable/blackspace"/>
+
+        <ImageView
+            android:id="@+id/third_card"
+            android:layout_width="0dp"
+            android:layout_height="95dp"
+            android:layout_weight="1"
             android:scaleType="fitEnd"
             android:src="@drawable/blackspace"/>
 
         <ImageView
             android:id="@+id/fifth_card"
             android:layout_width="0dp"
-            android:layout_height="90dp"
+            android:layout_height="95dp"
             android:layout_weight="1"
-            android:onClick="flipCard5"
             android:scaleType="fitEnd"
             android:src="@drawable/blackspace"/>
-
     </LinearLayout>
 
-    <LinearLayout
-        android:layout_width="85dp"
-        android:layout_height="90dp"
+    <Button
+        android:id="@+id/button9"
+        android:layout_width="60dp"
+        android:layout_height="30dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="11dp"
+        android:layout_marginBottom="84dp"
+        android:text="$25"
+        android:background="@drawable/btn_round_w"/>
+
+    <Button
+        android:id="@+id/button10"
+        android:layout_width="60dp"
+        android:layout_height="30dp"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="10dp"
+        android:layout_marginBottom="84dp"
+        android:layout_toEndOf="@+id/button9"
+        android:text="$100"
+        android:background="@drawable/btn_round_w"/>
+
+    <Button
+        android:id="@+id/button11"
+        android:layout_width="60dp"
+        android:layout_height="30dp"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="10dp"
+        android:layout_marginBottom="84dp"
+        android:layout_toEndOf="@+id/button10"
+        android:text="$1000"
+        android:background="@drawable/btn_round_w"/>
+
+    <Button
+        android:id="@+id/button12"
+        android:layout_width="80dp"
+        android:layout_height="30dp"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="10dp"
+        android:layout_marginBottom="84dp"
+        android:layout_toEndOf="@+id/button11"
+        android:background="@drawable/btn_round_w"
+        android:text="ALL IN!"
+        android:textStyle="bold" />
+
+    <Button
+        android:id="@+id/button13"
+        android:layout_width="80dp"
+        android:layout_height="30dp"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="10dp"
+        android:layout_marginBottom="84dp"
+        android:layout_toEndOf="@+id/button12"
+        android:background="@drawable/btn_round_w"
+        android:text="PLACE beT"
+        android:textStyle="bold" />
+
+    <Button
+        android:id="@+id/button14"
+        android:layout_width="70dp"
+        android:layout_height="30dp"
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginEnd="6dp"
-        android:layout_marginBottom="2dp">
-    </LinearLayout>
-    
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="27dp"
+        android:background="@drawable/btn_round_w"
+        android:text="Fold" />
+
+    <Button
+        android:id="@+id/button15"
+        android:layout_width="70dp"
+        android:layout_height="30dp"
+        android:layout_alignParentBottom="true"
+        android:layout_marginEnd="10dp"
+        android:layout_marginBottom="27dp"
+        android:layout_toStartOf="@+id/button14"
+        android:text="check"
+        android:background="@drawable/btn_round_w"/>
+
+    <Button
+        android:id="@+id/button16"
+        android:layout_width="70dp"
+        android:layout_height="30dp"
+        android:layout_alignParentBottom="true"
+        android:layout_marginEnd="10dp"
+        android:layout_marginBottom="27dp"
+        android:layout_toStartOf="@+id/button15"
+        android:background="@drawable/btn_round_w"
+        android:text="Call" />
+
 </RelativeLayout>
