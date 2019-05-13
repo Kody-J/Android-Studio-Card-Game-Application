@@ -3,7 +3,25 @@ Custom app using Agile method
 
 HOT HANDS
 
-Hot Hands is an Android device designed gaming application. The goal of the project is to create the ultimate experience for the casual card game player. To start with, Poker will be the first card game available. This is the standard 5 card poker game.
+Hot Hands is an Android device designed gaming application. The goal of the project is to create the ultimate experience for the casual card game player.
+
+App Features:
+  1) Custom home icon with graphic logo forground and transparrent background
+  2) Custom round buttons x?
+  3) Custom playing card images x52
+  4) Custom playing card back image
+  5) Custom Treasure Chest image
+  6) Custom Poker Table and Texas Hold'em Table images
+  7) Custom player Icon images (in game)
+  8) Custom poker chips Images
+
+App Tutorial:
+  1) Launch app from home icon
+  2) Click 'Play' button from home screen
+  3) Click  which game to play
+  4) Click 'New Game' (back button in top right takes you to previous screen)
+
+To start with, Poker will be the first card game available. This is the standard 5 card poker game.
 
 5 Card Poker: (Simple design, No card swapping)
   1) The user plays against Two other A/I players
@@ -17,7 +35,9 @@ Hot Hands is an Android device designed gaming application. The goal of the proj
   8) If user is still has chips and players remain, start next round
   --> Note: Hit back button to start new game
   
-The second card game is Texas Hold'em Style Poker 
+The second card game is Texas Hold'em Style Poker
+
+Texas Hold'em
   1) The user plays against Two other A/I players
   2) All players start with $50,000
   3) The Dealer Automatically deals each player 2 cards
@@ -36,5 +56,7 @@ The second card game is Texas Hold'em Style Poker
   15) The winner is displayed and the pot total is added to the winners chips
   16)  If user is still has chips and players remain, start next round
   
+Note: Other cards games will include solitare, and war. For now only a coming soon page is displayed.
+
 The focus will be on on design, esthetics, art, and entertainment on the Android frame work using Android studio. From there, the focus will be on creating a solid AI predictive system to match the user’s skill level and make the experience as organic as possible. T
 he vison is to design an environment and develop the framework for what will later be more comprehensive selection of card games to play on a fun and interactive platform.  
