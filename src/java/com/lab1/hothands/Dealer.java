@@ -168,13 +168,4 @@ public class Dealer extends Deck {
             p2.setStatus ("Loser");
         }
     }
-
-
-    //This is the begenning of the 5 card Poker logic: pretty simple implemintaion as such
-    //1. Five cards are dealt to each player
-    //2. Betting round #1 =, begenning with the first active player to left of bing blind
-    //3. Draw (This where each player is given the opportunity to 'discard' any or all thier cards and recive new replacments
-    //4. Betting round #2, begenning with the first active player
-    //5. Showdown (a winner is determined if th there is more than one player in the pot)
-
 }
