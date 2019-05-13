@@ -19,7 +19,7 @@ public class MainActivity extends AppCompatActivity {
 
     public int txsPotTtl, pokerPotTtl, numberOfPlayers = 3, betAmount, sideBet1, sideBet2, gamePhase;
     public Dealer dealerEmma, dealerBob;
-    boolean txsAllIn, pokerAllIn;
+    boolean txsAllIn, pokerAllIn, check;
     public TextView total_txt, plyr1_txt, plyr2_txt, plyr3_txt;
 
     public MainActivity() {
@@ -77,6 +77,7 @@ public class MainActivity extends AppCompatActivity {
         betAmount = 0;
         pokerAllIn = false;
         pokerPotTtl = 0;
+        check = false;
 
         total_txt = findViewById (R.id.pot_total);
         total_txt.setText ("$" + pokerPotTtl);
@@ -103,9 +104,7 @@ public class MainActivity extends AppCompatActivity {
         player1Card4.setImageResource (pokerplayer1.getCardId (3));
         player1Card5 = findViewById (R.id.fifth_card);
         player1Card5.setImageResource (pokerplayer1.getCardId (4));
-
     }
-
     public void poker25(View vw) {
         if (pokerplayer1.getChips ( ) >= 25) {
             betAmount += 25;
@@ -116,7 +115,6 @@ public class MainActivity extends AppCompatActivity {
             plyr1_txt.setText ("$" + pokerplayer1.getChips ( ));
         }
     }
-
     public void poker100(View vw) {
         if (pokerplayer1.getChips ( ) >= 100) {
             betAmount += 100;
@@ -151,8 +149,51 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
+    public void pokerCheck (View vw){
+        pokerplayer1.check = true;
+        this.pokerPlaceBet (vw);
+    }
+
+    public void pokerFold(View vw) {
+
+        pokerplayer1.fold = true;
+        if (player2.stillIn) {
+            if (player2.getChips ( ) < 1000) {
+                sideBet1 = player2.getChips ( );
+                player2.reduce (sideBet1);
+                pokerPotTtl += sideBet1;
+            } else {
+                player2.reduce (1000);
+                pokerPotTtl += 1000;
+            }
+            total_txt = findViewById (R.id.pot_total);
+            total_txt.setText ("$" + pokerPotTtl);
+
+            plyr2_txt = findViewById (R.id.player_2_chips);
+            plyr2_txt.setText ("$" + player2.getChips ( ));
+        }
+        if (player3.stillIn) {
+            if (player3.getChips ( ) < 1000) {
+                sideBet2 = player3.getChips ( );
+                player3.reduce (sideBet2);
+                pokerPotTtl += sideBet2;
+            } else {
+                player3.reduce (1000);
+                pokerPotTtl += 1000;
+            }
+            total_txt = findViewById (R.id.pot_total);
+            total_txt.setText ("$" + pokerPotTtl);
+
+            plyr3_txt = findViewById (R.id.player_3_chips);
+            plyr3_txt.setText ("$" + player3.getChips ( ));
+        }
+        pokerplayer1.stillIn = false;
+        this.pokerPlaceBet (vw);
+
+    }
+
     public void pokerPlaceBet(View vw) {
-        if (betAmount > 0 || pokerAllIn) {
+        if (betAmount > 0 || pokerAllIn || pokerplayer1.check == true || pokerplayer1.fold == true) {
             pokerPotTtl += betAmount;
             total_txt = findViewById (R.id.pot_total);
             total_txt.setText ("$" + pokerPotTtl);
@@ -190,7 +231,11 @@ public class MainActivity extends AppCompatActivity {
             }
             betAmount = 0;
 
-            dealerBob.setPlayerScore (pokerplayer1);
+            if(pokerplayer1.fold == true)
+               pokerplayer1.fold = false;
+            else
+                dealerBob.setPlayerScore (pokerplayer1);
+
             dealerBob.setPlayerScore (player2);
             dealerBob.setPlayerScore (player3);
             dealerBob.setStatus (pokerplayer1, player2, player3);
@@ -234,10 +279,9 @@ public class MainActivity extends AppCompatActivity {
                 player3.stillIn = false;
                 numberOfPlayers -= 1;
             }
-            new CountDownTimer (10000, 1000) {
+            new CountDownTimer (15000, 1000) {
                 public void onTick(long millisUntilFinished) {
                 }
-
                 public void onFinish() {
                     dealerBob = new Dealer (true, numberOfPlayers);
                     if (pokerplayer1.getStatus ( ) == "Winner!") {
@@ -344,6 +388,7 @@ public class MainActivity extends AppCompatActivity {
         holdem_plyr3_txt = findViewById (R.id.holdem_player3_chips);
         holdem_plyr3_txt.setText ("$" + player3.getChips ( ));
 
+
         //Deals out all player Cards one at a time
         txsplayer1.setCard (dealerEmma.dealCard ( ));
         txsPlayer1Card1 = findViewById (R.id.txsSecond_card);
@@ -363,6 +408,8 @@ public class MainActivity extends AppCompatActivity {
         player3.setCard (dealerEmma.dealCard ( ));
         txsPlayer3Card2 = findViewById (R.id.txs_ply3_crd2);
         txsPlayer3Card2.setImageResource (R.drawable.saints_back_black);
+
+
     }
 
     public void texasHoldem25(View vw) {
@@ -408,7 +455,6 @@ public class MainActivity extends AppCompatActivity {
             betAmount = 0;
         }
     }
-
     public void texasAllIn(View vw) {
         if (txsplayer1.getChips ( ) > 0) {
             betAmount += txsplayer1.getChips ( );
@@ -421,8 +467,48 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
+    public void texasCheck (View vw){
+        txsplayer1.check = true;
+        this.texasPlaceBet (vw);
+    }
+
+    public void texasFold (View vw){
+        txsplayer1.fold = true;
+        if (player2.stillIn) {
+            if (player2.getChips ( ) < 1000) {
+                sideBet1 = player2.getChips ( );
+                player2.reduce (sideBet1);
+                txsPotTtl += sideBet1;
+            } else {
+                player2.reduce (1000);
+                txsPotTtl += 1000;
+            }
+            holdem_pot_txt = findViewById (R.id.holdem_pot);
+            holdem_pot_txt.setText ("$" + txsPotTtl);
+
+            holdem_plyr2_txt = findViewById (R.id.holdem_player2_chips);
+            holdem_plyr2_txt.setText ("$" + player2.getChips ( ));
+        }
+        if (player3.stillIn) {
+            if (player3.getChips ( ) < 1000) {
+                sideBet2 = player3.getChips ( );
+                player3.reduce (sideBet2);
+                txsPotTtl += sideBet2;
+            } else {
+                player3.reduce (1000);
+                txsPotTtl += 1000;
+            }
+            total_txt = findViewById (R.id.pot_total);
+            total_txt.setText ("$" + pokerPotTtl);
+
+            holdem_plyr3_txt = findViewById (R.id.holdem_player3_chips);
+            holdem_plyr3_txt.setText ("$" + player3.getChips ( ));
+        }
+    }
+
+
     public void texasPlaceBet(View vw) {
-        if (betAmount > 0 || txsAllIn) {
+        if (betAmount > 0 || txsAllIn || txsplayer1.check == true) {
             txsPotTtl += betAmount;
             holdem_pot_txt = findViewById (R.id.holdem_pot);
             holdem_pot_txt.setText ("$" + txsPotTtl);
@@ -511,7 +597,7 @@ public class MainActivity extends AppCompatActivity {
                 numberOfPlayers -= 1;
             }
 
-            new CountDownTimer (10000, 1000) {
+            new CountDownTimer (15000, 1000) {
                 public void onTick(long millisUntilFinished) {
                 }
 

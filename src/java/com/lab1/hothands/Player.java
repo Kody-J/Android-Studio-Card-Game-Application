@@ -10,7 +10,7 @@ public class Player {
     private ArrayList<Card> hand;
     private int chips;
     public int pairCount, score;
-    public boolean stillIn, highCard, pair, twoPair, threeOkind;
+    public boolean stillIn, highCard, pair, twoPair, threeOkind, check, allIn, fold;
     public boolean straight, flush, fullHouse, fourOkind, straightFlush, royalFlush;
 
     public Player() {
@@ -30,6 +30,9 @@ public class Player {
         straightFlush = false;
         royalFlush = false;
         stillIn = false;
+        check = false;
+        allIn = false;
+        fold = false;
         status = " ";
     }
 
@@ -53,6 +56,9 @@ public class Player {
         royalFlush = false;
         stillIn = false;
         status = " ";
+        check = false;
+        allIn = false;
+        fold = false;
     }
 
     public ArrayList<Card> getHand() {
@@ -91,6 +97,9 @@ public class Player {
         royalFlush = false;
         stillIn = true;
         status = " ";
+        check = false;
+        allIn = false;
+        fold = false;
         hand = new ArrayList<> ();
     }
 }

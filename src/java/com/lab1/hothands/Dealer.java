@@ -82,6 +82,8 @@ public class Dealer extends Deck {
     }
 
     public void setDealerScore(Player p) {
+
+
     }
 
     public void setPlayerScore(Player p) {
@@ -151,19 +153,37 @@ public class Dealer extends Deck {
     public void setStatus(Player p1, Player p2, Player p3){
 
         if(p1.getScore () > p2.getScore () && p1.getScore () > p3.getScore ()) {
-            p1.setStatus ("Winner!");
+            if(p1.getScore () == 0)
+                p1.setStatus ("Fold");
+            else
+                p1.setStatus ("Winner!");
             p2.setStatus ("Loser");
             p3.setStatus ("Loser");
         }
         else if(p2.stillIn == true && p2.getScore () > p1.getScore () && p2.getScore () > p3.getScore ()) {
             p2.setStatus ("Winner!");
-            p1.setStatus ("Loser");
+            if(p1.getScore () == 0)
+                p1.setStatus ("Fold");
+            else
+                p1.setStatus ("Winner!");
             p3.setStatus ("Loser");
         }
         else if(p3.stillIn == true && p3.getScore () > p1.getScore () && p3.getScore () > p2.getScore ()){
             p3.setStatus ("Winner!");
-            p1.setStatus ("Loser");
+            if(p1.getScore () == 0)
+                p1.setStatus ("Fold");
+            else
+                p1.setStatus ("Winner!");
             p2.setStatus ("Loser");
         }
     }
+
+
+    //This is the begenning of the 5 card Poker logic: pretty simple implemintaion as such
+    //1. Five cards are dealt to each player
+    //2. Betting round #1 =, begenning with the first active player to left of bing blind
+    //3. Draw (This where each player is given the opportunity to 'discard' any or all thier cards and recive new replacments
+    //4. Betting round #2, begenning with the first active player
+    //5. Showdown (a winner is determined if th there is more than one player in the pot)
+
 }
