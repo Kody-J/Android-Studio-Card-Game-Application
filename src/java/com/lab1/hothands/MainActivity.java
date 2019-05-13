@@ -344,7 +344,6 @@ public class MainActivity extends AppCompatActivity {
         holdem_plyr3_txt = findViewById (R.id.holdem_player3_chips);
         holdem_plyr3_txt.setText ("$" + player3.getChips ( ));
 
-
         //Deals out all player Cards one at a time
         txsplayer1.setCard (dealerEmma.dealCard ( ));
         txsPlayer1Card1 = findViewById (R.id.txsSecond_card);
@@ -364,8 +363,6 @@ public class MainActivity extends AppCompatActivity {
         player3.setCard (dealerEmma.dealCard ( ));
         txsPlayer3Card2 = findViewById (R.id.txs_ply3_crd2);
         txsPlayer3Card2.setImageResource (R.drawable.saints_back_black);
-
-
     }
 
     public void texasHoldem25(View vw) {
