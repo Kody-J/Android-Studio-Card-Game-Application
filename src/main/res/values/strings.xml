@@ -1,20 +1,3 @@
 <resources>
-    <string name="app_name">Hot Hands</string>
-    <string name="coming_soon">This Feature is Coming Soon!!!</string>
-    <string name="poker">"5 Card Poker"</string>
-    <string name="exit">"X"</string>
-    <string name="texasH">"Texas Holdem"</string>
-    <string name="game3">"Game Three"</string>
-    <string name="game4">"Game Four"</string>
-    <string name="play">"PLAY</string>
-    <string name="twoPlayer">"Two Players"</string>
-    <string name="threePlayer">"Three Players"</string>
-    <string name="newG">"New Game"</string>
-    <string name="continueG">"Continue Game"</string>
-    <string name="playerChips">"$50,000"</string>
-    <string name="chipCount"> 0 </string>
-    <string name="potAmount">"$0"</string>
-    <string name="plyr2Chips">"$50,000"</string>
-    <string name="plyr3Chips">"$50,000"</string>
-    <string name="cash">"$"</string>
+    <string name="app_name">HOT HANDS</string>
 </resources>
