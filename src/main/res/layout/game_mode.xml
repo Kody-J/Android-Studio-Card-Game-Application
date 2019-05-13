@@ -5,61 +5,87 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/coolDark">
+    android:background="@color/white">
 
     <Button
         android:id="@+id/game1"
         android:layout_width="300dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="140dp"
-        android:text="Game One"
-        android:background="@color/colorPrimary"
+        android:background="@drawable/btn_round_g"
+        android:onClick="pokerSetUp"
+        android:text="@string/poker"
+        android:textAllCaps="true"
         android:textColor="@color/white"
         android:textSize="23sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@id/game2"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintBottom_toTopOf="@id/button2"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
-        android:id="@+id/button2"
+        android:id="@+id/game2"
         android:layout_width="300dp"
         android:layout_height="wrap_content"
-        android:text="Game Two"
-        android:background="@color/colorPrimary"
+        android:background="@drawable/btn_round_g"
+        android:onClick="holdemSetUp"
+        android:text="@string/texasH"
         android:textColor="@color/white"
         android:textSize="23sp"
-        app:layout_constraintBottom_toTopOf="@+id/button3"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/game3"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/game1" />
 
     <Button
-        android:id="@+id/button3"
+        android:id="@+id/game3"
         android:layout_width="300dp"
         android:layout_height="wrap_content"
-        android:text="Game Three"
-        android:background="@color/colorPrimary"
+        android:background="@drawable/btn_round_g"
+        android:onClick="comingSoon"
+        android:text="@string/game3"
         android:textColor="@color/white"
         android:textSize="23sp"
-        app:layout_constraintBottom_toTopOf="@+id/button4"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/game4"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button2" />
+        app:layout_constraintTop_toBottomOf="@+id/game2" />
 
     <Button
-        android:id="@+id/button4"
+        android:id="@+id/game4"
         android:layout_width="300dp"
         android:layout_height="wrap_content"
         android:layout_marginBottom="140dp"
-        android:text="GAME FOUR"
-        android:background="@color/colorPrimary"
+        android:background="@drawable/btn_round_g"
+        android:onClick="comingSoon"
+        android:text="@string/game4"
         android:textColor="@color/white"
         android:textSize="23sp"
+        android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button3" />
+        app:layout_constraintTop_toBottomOf="@+id/game3" />
 
+    <ImageView
+        android:id="@+id/home"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="8dp"
+        android:contextClickable="true"
+        android:onClick="mainMenu"
+        android:src="@drawable/back_icon2"
+        app:layout_constraintBottom_toTopOf="@+id/game1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.973"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.062" />
 
 </android.support.constraint.ConstraintLayout>

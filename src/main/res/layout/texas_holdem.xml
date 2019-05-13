@@ -29,8 +29,8 @@
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
-        android:layout_marginStart="6dp"
-        android:layout_marginTop="39dp"
+        android:layout_marginStart="13dp"
+        android:layout_marginTop="14dp"
         android:gravity="center">
 
         <ImageView
@@ -93,11 +93,11 @@
 
     <LinearLayout
         android:id="@+id/holdemPlyr2Hand"
-        android:layout_width="75dp"
-        android:layout_height="50sp"
+        android:layout_width="100dp"
+        android:layout_height="80dp"
         android:layout_above="@+id/holdemTableLayout"
         android:layout_alignParentStart="true"
-        android:layout_marginStart="70dp"
+        android:layout_marginStart="56dp"
         android:layout_marginBottom="5dp"
         android:gravity="bottom"
         android:orientation="horizontal">
@@ -127,7 +127,7 @@
         android:src="@drawable/poker_chpz"
         android:layout_above="@+id/holdemPlyr2Hand"
         android:layout_alignParentStart="true"
-        android:layout_marginStart="254dp"
+        android:layout_marginStart="228dp"
         android:layout_marginBottom="5dp" />
 
     <LinearLayout
@@ -136,7 +136,7 @@
         android:layout_height="95sp"
         android:layout_above="@+id/holdemPlyr3Hand"
         android:layout_alignParentEnd="true"
-        android:layout_marginEnd="40dp"
+        android:layout_marginEnd="56dp"
         android:gravity="center"
         android:orientation="vertical">
 
@@ -151,25 +151,26 @@
             android:gravity="center"
             android:text="PLAYER 3"
             android:textStyle="bold"/>
+
         <TextView
-            android:id="@+id/holdem_plyr3_chips"
+            android:id="@+id/holdem_player3_chips"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:textSize="18sp"
-            android:textStyle="bold"
             android:gravity="center"
-            android:textColor="@color/white"/>
+            android:textColor="@color/white"
+            android:textSize="18sp"
+            android:textStyle="bold" />
 
     </LinearLayout>
 
     <LinearLayout
         android:id="@+id/holdemPlyr3Hand"
-        android:layout_width="75dp"
-        android:layout_height="50dp"
+        android:layout_width="100dp"
+        android:layout_height="80dp"
         android:layout_above="@+id/holdemTableLayout"
         android:layout_alignParentEnd="true"
         android:layout_marginStart="21dp"
-        android:layout_marginEnd="54dp"
+        android:layout_marginEnd="56dp"
         android:layout_marginBottom="5dp"
         android:gravity="bottom"
         android:orientation="horizontal">
@@ -198,8 +199,8 @@
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginStart="114dp"
-        android:layout_marginBottom="39dp"
+        android:layout_marginStart="115dp"
+        android:layout_marginBottom="40dp"
         android:gravity="center"
         android:padding="4dp">
 
@@ -219,11 +220,11 @@
 
     <RelativeLayout
         android:id="@+id/holdemTableLayout"
-        android:layout_width="360dp"
-        android:layout_height="170dp"
+        android:layout_width="400dp"
+        android:layout_height="180dp"
         android:layout_above="@+id/player_hand"
         android:layout_alignParentStart="true"
-        android:layout_marginStart="30dp"
+        android:layout_marginStart="5dp"
         android:layout_marginEnd="0dp"
         android:layout_marginBottom="10dp">
 
@@ -231,17 +232,19 @@
             android:id="@+id/holdem_table"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            android:layout_alignParentEnd="true"
+            android:layout_marginEnd="0dp"
             android:padding="2dp"
             android:src="@drawable/holdem_table_slim2" />
 
         <LinearLayout
             android:id="@+id/dealer_hand"
-            android:layout_width="270dp"
-            android:layout_height="80dp"
+            android:layout_width="305dp"
+            android:layout_height="110dp"
             android:layout_alignParentStart="true"
             android:layout_alignParentBottom="true"
-            android:layout_marginStart="45dp"
-            android:layout_marginBottom="52dp"
+            android:layout_marginStart="47dp"
+            android:layout_marginBottom="51dp"
             android:gravity="center"
             android:orientation="horizontal">
 
@@ -250,7 +253,7 @@
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:padding="3dp"
+                android:padding="1dp"
                 android:scaleType="fitEnd"
                 android:src="@drawable/blackspace"/>
 
@@ -259,7 +262,7 @@
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:padding="3dp"
+                android:padding="1dp"
                 android:scaleType="fitEnd"
                 android:src="@drawable/blackspace"/>
 
@@ -268,7 +271,7 @@
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:padding="3dp"
+                android:padding="1dp"
                 android:scaleType="fitEnd"
                 android:src="@drawable/blackspace"/>
 
@@ -277,7 +280,7 @@
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:padding="3dp"
+                android:padding="1dp"
                 android:scaleType="fitEnd"
                 android:src="@drawable/blackspace"/>
 
@@ -286,7 +289,7 @@
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:padding="3dp"
+                android:padding="1dp"
                 android:scaleType="fitEnd"
                 android:src="@drawable/blackspace"/>
 
@@ -319,30 +322,36 @@
     </LinearLayout>
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/check"
         android:layout_width="wrap_content"
         android:layout_height="30dp"
-        android:layout_above="@+id/button4"
+        android:layout_above="@+id/call"
         android:layout_alignParentEnd="true"
         android:layout_marginEnd="14dp"
         android:layout_marginBottom="11dp"
         android:background="@drawable/btn_round_w"
         android:fadingEdge="horizontal"
-        android:text="CHECK" />
+        android:text="CHECK"
+        android:backgroundTint="@color/black"
+        android:textColor="@color/white"
+        android:textStyle="bold"/>
 
     <Button
-        android:id="@+id/button2"
+        android:id="@+id/fold"
         android:layout_width="wrap_content"
         android:layout_height="30dp"
-        android:layout_above="@+id/button"
+        android:layout_above="@+id/check"
         android:layout_alignParentEnd="true"
         android:layout_marginEnd="14dp"
         android:layout_marginBottom="11dp"
         android:background="@drawable/btn_round_w"
-        android:text="FOLD" />
+        android:text="FOLD"
+        android:backgroundTint="@color/black"
+        android:textColor="@color/white"
+        android:textStyle="bold"/>
 
     <Button
-        android:id="@+id/button4"
+        android:id="@+id/call"
         android:layout_width="wrap_content"
         android:layout_height="30dp"
         android:layout_alignParentEnd="true"
@@ -350,32 +359,43 @@
         android:layout_marginEnd="14dp"
         android:layout_marginBottom="101dp"
         android:background="@drawable/btn_round_w"
-        android:text="CALL" />
+        android:text="CALL"
+        android:backgroundTint="@color/black"
+        android:textColor="@color/white"
+        android:textStyle="bold"/>
 
     <Button
-        android:id="@+id/button3"
+        android:id="@+id/txs_25"
         android:layout_width="wrap_content"
         android:layout_height="30dp"
-        android:layout_above="@+id/button5"
+        android:layout_above="@+id/txs_100"
         android:layout_alignParentStart="true"
         android:layout_marginStart="14dp"
         android:layout_marginBottom="11dp"
         android:background="@drawable/btn_round_w"
-        android:text="$25" />
+        android:text="$25"
+        android:textStyle="bold"
+        android:backgroundTint="@color/black"
+        android:textColor="@color/white"
+        android:onClick="texasHoldem25"/>
 
     <Button
-        android:id="@+id/button5"
+        android:id="@+id/txs_100"
         android:layout_width="wrap_content"
         android:layout_height="30dp"
-        android:layout_above="@+id/button6"
+        android:layout_above="@+id/txs_1000"
         android:layout_alignParentStart="true"
         android:layout_marginStart="14dp"
         android:layout_marginBottom="11dp"
         android:background="@drawable/btn_round_w"
-        android:text="$100" />
+        android:text="$100"
+        android:backgroundTint="@color/black"
+        android:textColor="@color/white"
+        android:onClick="texasHoldem100"
+        android:textStyle="bold"/>
 
     <Button
-        android:id="@+id/button6"
+        android:id="@+id/txs_1000"
         android:layout_width="wrap_content"
         android:layout_height="30dp"
         android:layout_alignParentStart="true"
@@ -383,10 +403,14 @@
         android:layout_marginStart="14dp"
         android:layout_marginBottom="101dp"
         android:background="@drawable/btn_round_w"
-        android:text="$1000" />
+        android:text="$1000"
+        android:backgroundTint="@color/black"
+        android:textColor="@color/white"
+        android:onClick="texasHoldem1000"
+        android:textStyle="bold"/>
 
     <Button
-        android:id="@+id/button7"
+        android:id="@+id/allIn"
         android:layout_width="wrap_content"
         android:layout_height="30dp"
         android:layout_alignParentStart="true"
@@ -395,22 +419,26 @@
         android:layout_marginBottom="30dp"
         android:background="@drawable/btn_round_w"
         android:text="ALL IN!"
-        android:textStyle="bold" />
+        android:textStyle="bold"
+        android:backgroundTint="@color/black"
+        android:textColor="@color/white"
+        android:onClick="texasAllIn"/>
 
     <TextView
-        android:id="@+id/textView"
+        android:id="@+id/cancelBet"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_above="@+id/button8"
+        android:layout_above="@+id/placeBet"
         android:layout_alignParentEnd="true"
         android:layout_marginEnd="30dp"
         android:layout_marginBottom="10dp"
         android:contextClickable="true"
         android:text="Cancel Bet"
         android:textSize="12dp"
-        android:textStyle="bold" />
+        android:textStyle="bold"
+        android:onClick="texasCancelBet"/>
     <Button
-        android:id="@+id/button8"
+        android:id="@+id/placeBet"
         android:layout_width="wrap_content"
         android:layout_height="30dp"
         android:background="@drawable/btn_round_w"
@@ -419,5 +447,23 @@
         android:layout_marginEnd="14dp"
         android:layout_marginBottom="30dp"
         android:textStyle="bold"
-        android:text="Place Bet" />
+        android:text="Place Bet"
+        android:backgroundTint="@color/black"
+        android:textColor="@color/white"
+        android:onClick="texasPlaceBet"/>
+
+    <TextView
+        android:id="@+id/txsRedBet"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="168dp"
+        android:layout_marginBottom="16dp"
+        android:textColor="@color/red"
+        android:textStyle="bold"
+        android:textSize="21sp"/>
+
+
 </RelativeLayout>
+
