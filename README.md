@@ -14,6 +14,7 @@ App Features:
   6) Custom Poker Table and Texas Hold'em Table images
   7) Custom player Icon images (in game)
   8) Custom poker chips Images
+  9) Two card game modes
 
 App Tutorial:
   1) Launch app from home icon
