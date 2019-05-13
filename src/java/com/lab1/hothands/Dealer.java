@@ -82,8 +82,6 @@ public class Dealer extends Deck {
     }
 
     public void setDealerScore(Player p) {
-
-
     }
 
     public void setPlayerScore(Player p) {
