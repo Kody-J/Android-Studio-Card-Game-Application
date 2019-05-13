@@ -27,7 +27,10 @@ To start with, Poker will be the first card game available. This is the standard
   1) The user plays against Two other A/I players
   2) All players start with $50,000 in chips
   3) The Dealer Automatically deals each player 5 cards
-  3) The user must make a bet based on their 5 cards
+  3) The user initiates the first round of betting based on their 5 cards by either betting, folding, checking, or calling.
+      --> Fold: User ends turn looses chips in pot and remaining players continue automatically
+      --> checking: User passes betting off to next player, round continues if bet not increased, player must call or raise otherwise
+      --> Call: User matches exact bet amount and turn ends
   4) Each A/I player bets after the user, automatically
   5) A winner is determined based on the players in the hand and the rules of 5-Card Poker
   6) the hands of all the players are displayed for 10 secs. 
@@ -41,7 +44,10 @@ Texas Hold'em
   1) The user plays against Two other A/I players
   2) All players start with $50,000
   3) The Dealer Automatically deals each player 2 cards
-  4) The user initiates the first round of betting based on their two cards by either betting, folding, checking, or calling.
+  4) The user initiates the first round of betting based on their 2 cards by either betting, folding, checking, or calling.
+      --> Fold: User ends turn looses chips in pot and remaining players continue automatically
+      --> checking: User passes betting off to next player, round continues if bet not increased, player must call or raise otherwise
+      --> Call: User matches exact bet amount and turn ends
   5) Each A/I player bets after the user, automatically
   4) The dealer performs the flop. (discards the top card on the deck, and lays down three cards face up for all users to bet off of)
   6) The user initiates the second round of betting just as before
