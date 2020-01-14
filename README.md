@@ -1,13 +1,17 @@
-# CS449-Android-Project
+
 Custom app using Agile method
 
 HOT HANDS
 
 Hot Hands is an Android device designed gaming application. The goal of the project is to create the ultimate experience for the casual card game player.
 
+This application was developed using Andorid Studios in Java and all graphics were created using GIMP
+
+--> Download the free version of Android Studio. Copy this repository in a new project and run the application locally! 
+
 App Features:
   1) Custom home icon with graphic logo foreground and transparent background
-  2) Custom round buttons x?
+  2) Custom button design
   3) Custom playing card images x52
   4) Custom playing card back image
   5) Custom Treasure Chest image
