@@ -5,7 +5,7 @@ public class Deck extends Card {
 
     //Deck consists of 52 cards
     private ArrayList<Card> deck;
-
+ 
     //Creates a ordered deck
     public Deck(){
         deck = new ArrayList<Card>();
