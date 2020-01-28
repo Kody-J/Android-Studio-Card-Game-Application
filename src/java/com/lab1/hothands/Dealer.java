@@ -16,7 +16,7 @@ public class Dealer extends Deck {
     private ArrayList<Card> dealerCards;
     private ArrayList<Player> playersInHand;
     private boolean isPoker;
-
+ 
     public Dealer(boolean is_poker_data, int player_data) {
         dealerCards = new ArrayList<> ( );
         playersInHand = new ArrayList<> ( );
