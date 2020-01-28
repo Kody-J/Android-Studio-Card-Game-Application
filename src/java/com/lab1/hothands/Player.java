@@ -5,7 +5,7 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Player {
-
+ 
     private String name, status;
     private ArrayList<Card> hand;
     private int chips;
