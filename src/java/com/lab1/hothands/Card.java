@@ -19,7 +19,7 @@ public class Card {
         suite = dataSuite;
         id = dataId;
     }
-
+ 
     public char getSuit() { return suite; }
     public int getValue () { return value;}
     public int getId () { return ( id);}
