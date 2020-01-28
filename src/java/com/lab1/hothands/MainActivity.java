@@ -16,7 +16,7 @@ public class MainActivity extends AppCompatActivity {
     public ImageView txsPlayer2Card1, txsPlayer2Card2, txsPlayer3Card1, txsPlayer3Card2;
     public Player txsplayer1, player2, player3, pokerplayer1;
     public TextView holdem_pot_txt, holdem_plyr1_txt, holdem_plyr2_txt, holdem_plyr3_txt, txsBet, pokerBet;
-
+ 
     public int txsPotTtl, pokerPotTtl, numberOfPlayers = 3, betAmount, sideBet1, sideBet2, gamePhase;
     public Dealer dealerEmma, dealerBob;
     boolean txsAllIn, pokerAllIn, check;
