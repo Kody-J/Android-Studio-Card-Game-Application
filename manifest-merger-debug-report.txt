@@ -1,5 +1,5 @@
 -- Merging decision tree log ---
-manifest
+manifest 
 ADDED from C:\Users\Kody\AndroidStudioProjects\CS 449 Project\app\src\main\AndroidManifest.xml:2:1-21:12
 INJECTED from C:\Users\Kody\AndroidStudioProjects\CS 449 Project\app\src\main\AndroidManifest.xml:2:1-21:12
 INJECTED from C:\Users\Kody\AndroidStudioProjects\CS 449 Project\app\src\main\AndroidManifest.xml:2:1-21:12
